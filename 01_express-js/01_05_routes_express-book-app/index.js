@@ -9,6 +9,7 @@ import getBooks from "./services/books/getBooks.js"; //! use the file extension
 import getBookById from "./services/books/getBookById.js";
 import createBook from "./services/books/createBook.js";
 import updateBookById from "./services/books/updateBookById.js";
+import deleteBook from "./services/books/deleteBook.js";
 
 const app = express();
 // needed for the express app to parse incomming JSON in the request body
@@ -77,6 +78,25 @@ app.put("/books/:id", (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).send("Something went wrong while updating the book by id!");
+  }
+});
+
+app.delete("/books/:id", (req, res) => {
+  try {
+    const { id } = req.params;
+    const deletedBookId = deleteBook(id);
+
+    if (!deletedBookId) {
+      res.status(404).send(`Book with id ${id} was not found!`);
+    } else {
+      res.status(200).json({
+        message: `The book with id ${id} was deleted!`,
+      });
+    }
+  } catch (error) {
+    console.error(error);
+    console.log("id of book to be deleted:", id);
+    res.status(500).send("Something went wrong while deleting book by id!");
   }
 });
 
