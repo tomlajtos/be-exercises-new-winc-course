@@ -4,6 +4,9 @@ import getBookById from "./services/books/getBookById.js";
 import createBook from "./services/books/createBook.js";
 
 const app = express();
+// needed for the express app to parse incomming JSON in the request body
+// (i.e. in post requests), it's a built in middleware function
+app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
