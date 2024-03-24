@@ -1,3 +1,9 @@
+//NOTE:
+// the following concepts are not addressed in this point, but at a later stage of the module:
+// - request body validation
+// - resource protection i.e. rate limiting (discussed in lessons about middleware)
+// - adding persistent data storage
+
 import express from "express";
 import getBooks from "./services/books/getBooks.js"; //! use the file extension
 import getBookById from "./services/books/getBookById.js";
