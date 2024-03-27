@@ -17,7 +17,9 @@ const app = express();
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  const html = `<html><h1>Welcome to the Express Bookstore</h1> 
+     <p>This is a test app to learn back-end programming with Express.js</p></html>`;
+  res.send(html);
 });
 
 app.get("/books", (req, res) => {
