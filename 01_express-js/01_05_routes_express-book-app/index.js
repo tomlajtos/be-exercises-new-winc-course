@@ -26,7 +26,8 @@ app.get("/books", (req, res) => {
   // only simple error handling since we're not dealing with
   // since we are not dealing with specific parameters (i.e. IDs etc.)
   try {
-    const books = getBooks();
+    const { genre, available } = req.query;
+    const books = getBooks(genre, available);
     res.status(200).json(books);
   } catch (error) {
     console.error(error);
