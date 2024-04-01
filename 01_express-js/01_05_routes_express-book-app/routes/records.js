@@ -12,8 +12,8 @@ router.get("/records", (req, res) => {
   // only simple error handling since we're not dealing with
   // since we are not dealing with specific parameters (i.e. IDs etc.)
   try {
-    const { genre, available } = req.query;
-    const records = getRecords(genre, available);
+    const { artist, genre, available } = req.query;
+    const records = getRecords(artist, genre, available);
     res.status(200).json(records);
   } catch (error) {
     console.error(error);
