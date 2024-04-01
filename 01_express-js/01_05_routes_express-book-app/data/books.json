@@ -7,7 +7,7 @@
       "isbn": "9780061120084",
       "pages": 336,
       "available": true,
-      "genre": "Fiction"
+      "genre": "fiction"
     },
     {
       "id": "2",
@@ -16,7 +16,7 @@
       "isbn": "9780743273565",
       "pages": 180,
       "available": true,
-      "genre": "Fiction"
+      "genre": "fiction"
     },
     {
       "id": "3",
@@ -25,7 +25,7 @@
       "isbn": "9780451524935",
       "pages": 328,
       "available": true,
-      "genre": "Fiction"
+      "genre": "fiction"
     },
     {
       "id": "4",
@@ -34,7 +34,7 @@
       "isbn": "9780141439518",
       "pages": 480,
       "available": true,
-      "genre": "Fiction"
+      "genre": "fiction"
     },
     {
       "id": "5",
@@ -43,7 +43,7 @@
       "isbn": "9780316769174",
       "pages": 234,
       "available": true,
-      "genre": "Fiction"
+      "genre": "fiction"
     },
     {
       "id": "6",
@@ -52,7 +52,7 @@
       "isbn": "9781250112682",
       "pages": 368,
       "available": true,
-      "genre": "Fantasy"
+      "genre": "fantasy"
     }
   ]
 }
