@@ -5,11 +5,13 @@
 // - adding persistent data storage
 
 import express from "express";
+import booksRouter from "./routes/books.js";
 
 const app = express();
 // needed for the express app to parse incomming JSON in the request body
 // (i.e. in post requests), it's a built in middleware function
 app.use(express.json());
+app.use("/books", booksRouter); // attach all routes from books.js module >> this enables relative URL paths inside books router
 
 app.get("/", (req, res) => {
   const html = `<html><h1>Welcome to the Express Bookstore</h1> 
