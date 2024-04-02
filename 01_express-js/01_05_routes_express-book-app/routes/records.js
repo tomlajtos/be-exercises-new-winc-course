@@ -8,7 +8,7 @@ import deleteRecord from "../services/records/deleteRecord.js";
 
 const router = express.Router();
 
-router.get("/records", (req, res) => {
+router.get("/", (req, res) => {
   // only simple error handling since we're not dealing with
   // since we are not dealing with specific parameters (i.e. IDs etc.)
   try {
@@ -23,7 +23,7 @@ router.get("/records", (req, res) => {
   }
 });
 
-router.get("/records/:id", (req, res) => {
+router.get("/:id", (req, res) => {
   try {
     const { id } = req.params;
     const record = getRecordById(id);
@@ -41,7 +41,7 @@ router.get("/records/:id", (req, res) => {
   }
 });
 
-router.post("/records", (req, res) => {
+router.post("/", (req, res) => {
   try {
     const { title, author, isbn, pages, available, genre } = req.body;
     const newRecord = createRecord(
@@ -59,7 +59,7 @@ router.post("/records", (req, res) => {
   }
 });
 
-router.put("/records/:id", (req, res) => {
+router.put("/:id", (req, res) => {
   try {
     const { id } = req.params;
     const { title, author, isbn, pages, available, genre } = req.body;

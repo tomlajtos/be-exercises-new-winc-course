@@ -8,13 +8,14 @@ import deleteBook from "../services/books/deleteBook.js";
 
 const router = express.Router();
 
-router.get("/books", (req, res) => {
+router.get("/", (req, res) => {
   // only simple error handling since we're not dealing with
   // since we are not dealing with specific parameters (i.e. IDs etc.)
   try {
     const { genre, available } = req.query;
     const books = getBooks(genre, available);
     res.status(200).json(books);
+    console.log("BOOKS:", books);
   } catch (error) {
     console.error(error);
     res
@@ -23,7 +24,7 @@ router.get("/books", (req, res) => {
   }
 });
 
-router.get("/books/:id", (req, res) => {
+router.get("/:id", (req, res) => {
   try {
     const { id } = req.params;
     const book = getBookById(id);
@@ -39,7 +40,7 @@ router.get("/books/:id", (req, res) => {
   }
 });
 
-router.post("/books", (req, res) => {
+router.post("/", (req, res) => {
   try {
     const { title, author, isbn, pages, available, genre } = req.body;
     const newBook = createBook(title, author, isbn, pages, available, genre);
@@ -50,7 +51,7 @@ router.post("/books", (req, res) => {
   }
 });
 
-router.put("/books/:id", (req, res) => {
+router.put("/:id", (req, res) => {
   try {
     const { id } = req.params;
     const { title, author, isbn, pages, available, genre } = req.body;
@@ -70,7 +71,7 @@ router.put("/books/:id", (req, res) => {
   }
 });
 
-router.delete("/books/:id", (req, res) => {
+router.delete("/:id", (req, res) => {
   try {
     const { id } = req.params;
     const deletedBookId = deleteBook(id);
