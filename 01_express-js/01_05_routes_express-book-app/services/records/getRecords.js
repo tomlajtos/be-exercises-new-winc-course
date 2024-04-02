@@ -4,11 +4,15 @@ const getRecords = (artist, genre, available) => {
   let records = recordData.records;
 
   if (artist) {
-    records = records.filter((record) => record.artist === artist);
+    records = records.filter(
+      (record) => record.artist.toLowerCase() === artist.toLowerCase(),
+    );
   }
 
   if (genre) {
-    records = records.filter((record) => record.genre === genre);
+    records = records.filter(
+      (record) => record.genre.toLowerCase() === genre.toLowerCase(),
+    );
   }
 
   if (available !== undefined) {

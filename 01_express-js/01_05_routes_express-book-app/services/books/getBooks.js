@@ -4,7 +4,9 @@ const getBooks = (genre, available) => {
   let books = bookData.books;
 
   if (genre) {
-    books = books.filter((book) => book.genre === genre);
+    books = books.filter(
+      (book) => book.genre.toLowerCase() === genre.toLowerCase(),
+    );
   }
 
   if (available !== undefined) {
