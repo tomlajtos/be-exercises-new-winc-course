@@ -2,13 +2,12 @@
 import { v4 as uuid } from "uuid";
 import recordData from "../../data/records.json" assert { type: "json" };
 
-const createRecord = (title, author, isbn, pages, available, genre) => {
+const createRecord = (title, artist, year, available, genre) => {
   const newRecord = {
     id: uuid(),
     title,
-    author,
-    isbn,
-    pages,
+    artist,
+    year,
     available,
     genre,
   };

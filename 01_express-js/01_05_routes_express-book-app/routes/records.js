@@ -43,15 +43,8 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
   try {
-    const { title, author, isbn, pages, available, genre } = req.body;
-    const newRecord = createRecord(
-      title,
-      author,
-      isbn,
-      pages,
-      available,
-      genre,
-    );
+    const { title, artist, year, available, genre } = req.body;
+    const newRecord = createRecord(title, artist, year, available, genre);
     res.status(201).json(newRecord);
   } catch (error) {
     console.error(error);
@@ -62,13 +55,12 @@ router.post("/", (req, res) => {
 router.put("/:id", (req, res) => {
   try {
     const { id } = req.params;
-    const { title, author, isbn, pages, available, genre } = req.body;
+    const { title, artist, year, available, genre } = req.body;
     const updatedRecord = updateRecordById(
       id,
       title,
-      author,
-      isbn,
-      pages,
+      artist,
+      year,
       available,
       genre,
     );

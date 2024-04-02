@@ -3,7 +3,7 @@
     {
       "id": "1",
       "title": "Echoes, Silence, Patience & Grace",
-      "author": "Foo Fighters",
+      "artist": "Foo Fighters",
       "year": "2007",
       "available": true,
       "genre": "grunge"
@@ -11,7 +11,7 @@
     {
       "id": "2",
       "title": "Enema Of The States",
-      "author": "blink-182",
+      "artist": "blink-182",
       "year": "1999",
       "available": true,
       "genre": "punk rock"
@@ -19,7 +19,7 @@
     {
       "id": "3",
       "title": "Sam's Town",
-      "author": "The Killers",
+      "artist": "The Killers",
       "year": "2006",
       "available": true,
       "genre": "indie rock"
@@ -27,7 +27,7 @@
     {
       "id": "4",
       "title": "Ride The Lightning",
-      "author": "Metallica",
+      "artist": "Metallica",
       "year": "1984",
       "available": true,
       "genre": "thrash metal"
