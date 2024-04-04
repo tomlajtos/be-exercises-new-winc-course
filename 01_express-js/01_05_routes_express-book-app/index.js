@@ -8,6 +8,7 @@ import express from "express";
 import "dotenv/config";
 import booksRouter from "./routes/books.js";
 import recordsRouter from "./routes/records.js";
+import loginRouter from "./routes/login.js";
 import log from "./middleware/logMiddleware.js";
 
 const app = express();
@@ -15,6 +16,7 @@ const app = express();
 // (i.e. in post requests), it's a built in middleware function
 app.use(express.json());
 app.use(log);
+app.use("/login", loginRouter);
 app.use("/books", booksRouter); // attach all routes from books.js router module >> this enables relative URL paths inside books router
 app.use("/records", recordsRouter); // attach all routes from records.js router module >> this enables relative URL paths inside books router
 
