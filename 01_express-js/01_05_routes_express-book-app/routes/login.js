@@ -5,7 +5,9 @@ import jwt from "jsonwebtoken";
 const router = Router();
 
 router.post("/", (req, res) => {
-  const secretKey = "my-obviously-not-very-secure-and-not-very-secret-key"; // only for practice exercise
+  const secretKey =
+    process.env.AUTH_SECRET_KEY ||
+    "my-obviously-not-very-secure-and-not-very-secret-key"; // we still need to provide a default value
   const { username, password } = req.body;
   const { users } = userData;
 
