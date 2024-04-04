@@ -15,7 +15,6 @@ router.get("/", (req, res) => {
     const { genre, available } = req.query;
     const books = getBooks(genre, available);
     res.status(200).json(books);
-    console.log("BOOKS:", books);
   } catch (error) {
     console.error(error);
     res
