@@ -1,5 +1,6 @@
 import express from "express";
 
+import authMiddleware from "../middleware/auth.js";
 import getRecords from "../services/records/getRecords.js"; //! use the file extension
 import getRecordById from "../services/records/getRecordById.js";
 import createRecord from "../services/records/createRecord.js";
@@ -41,7 +42,7 @@ router.get("/:id", (req, res) => {
   }
 });
 
-router.post("/", (req, res) => {
+router.post("/", authMiddleware, (req, res) => {
   try {
     const { title, artist, year, available, genre } = req.body;
     const newRecord = createRecord(title, artist, year, available, genre);
@@ -52,7 +53,7 @@ router.post("/", (req, res) => {
   }
 });
 
-router.put("/:id", (req, res) => {
+router.put("/:id", authMiddleware, (req, res) => {
   try {
     const { id } = req.params;
     const { title, artist, year, available, genre } = req.body;
@@ -73,7 +74,7 @@ router.put("/:id", (req, res) => {
   }
 });
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id", authMiddleware, (req, res) => {
   try {
     const { id } = req.params;
     const deletedRecordId = deleteRecord(id);
