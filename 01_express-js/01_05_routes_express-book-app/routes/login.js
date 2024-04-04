@@ -1,5 +1,5 @@
 import { Router } from "express";
-import userData from "../data/users.json";
+import userData from "../data/users.json" assert { type: "json" };
 import jwt from "jsonwebtoken";
 
 const router = Router();
@@ -19,7 +19,7 @@ router.post("/", (req, res) => {
     return res.status(401).json({ message: "Invalid credentials!" });
   }
 
-  const token = jwt.sign({ useId: user.id }, secretKey);
+  const token = jwt.sign({ userId: user.id }, secretKey);
   res.status(200).json({ message: "Succesful login!", token });
 });
 
