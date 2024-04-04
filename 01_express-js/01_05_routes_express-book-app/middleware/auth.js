@@ -16,7 +16,8 @@ const authMiddleware = (req, res, next) => {
 
   // use jwt.verify to check the token validity
   // NOTE: we only saved the user ID in the token body, for more complex validation
-  // more data would be needed >> this would be best handled by a separate middleware
+  // more user data (i.e. roles, permissions etc.) would be needed and further stepps toDateString();
+  // validate those >> this would be best handled by a separate middleware
   jwt.verify(token, secretKey, (err, decoded) => {
     if (err) {
       return res.status(403).json({ message: "Invalid token!" });
