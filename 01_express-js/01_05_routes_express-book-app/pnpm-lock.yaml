@@ -11,6 +11,9 @@ dependencies:
   express:
     specifier: ^4.19.1
     version: 4.19.1
+  express-oauth2-jwt-bearer:
+    specifier: ^1.6.0
+    version: 1.6.0
   jsonwebtoken:
     specifier: ^9.0.2
     version: 9.0.2
@@ -299,6 +302,13 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
+  /express-oauth2-jwt-bearer@1.6.0:
+    resolution: {integrity: sha512-HXnez7vocYlOqlfF3ozPcf/WE3zxT7zfUNfeg5FHJnvNwhBYlNXiPOvuCtBalis8xcigvwtInzEKhBuH87+9ug==}
+    engines: {node: ^12.19.0 || ^14.15.0 || ^16.13.0 || ^18.12.0 || ^20.2.0}
+    dependencies:
+      jose: 4.15.5
+    dev: false
+
   /express@4.19.1:
     resolution: {integrity: sha512-K4w1/Bp7y8iSiVObmCrtq8Cs79XjJc/RU2YYkZQ7wpUu5ZyZ7MtPHkqoMz4pf+mgXfNvo2qft8D9OnrH2ABk9w==}
     engines: {node: '>= 0.10.0'}
@@ -504,6 +514,10 @@ packages:
   /is-stream@2.0.1:
     resolution: {integrity: sha512-hFoiJiTl63nn+kstHGBtewWSKnQLpyb155KHheA1l39uvtO9nWIop1p3udqPcUd/xbF1VLMO4n7OI6p7RbngDg==}
     engines: {node: '>=8'}
+    dev: false
+
+  /jose@4.15.5:
+    resolution: {integrity: sha512-jc7BFxgKPKi94uOvEmzlSWFFe2+vASyXaKUpdQKatWAESU2MWjDfFf0fdfc83CDKcA5QecabZeNLyfhe3yKNkg==}
     dev: false
 
   /jsonwebtoken@9.0.2:
