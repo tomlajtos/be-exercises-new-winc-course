@@ -1,7 +1,8 @@
 import express from "express";
 
-import authMiddleware from "../middleware/auth.js";
-import getRecords from "../services/records/getRecords.js"; //! use the file extension
+// ! use the file extension in imports
+import authMiddleware from "../middleware/advancedAuth.js";
+import getRecords from "../services/records/getRecords.js";
 import getRecordById from "../services/records/getRecordById.js";
 import createRecord from "../services/records/createRecord.js";
 import updateRecordById from "../services/records/updateRecordById.js";

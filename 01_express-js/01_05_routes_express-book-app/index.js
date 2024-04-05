@@ -5,7 +5,7 @@
 // - adding persistent data storage
 
 import express from "express";
-import "dotenv/config";
+import "dotenv/config"; // needed for accessing environment variables
 import booksRouter from "./routes/books.js";
 import recordsRouter from "./routes/records.js";
 import loginRouter from "./routes/login.js";

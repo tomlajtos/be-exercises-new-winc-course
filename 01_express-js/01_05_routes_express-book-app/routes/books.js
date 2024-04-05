@@ -1,7 +1,8 @@
 import express from "express";
 
-import authMiddleware from "../middleware/auth.js";
-import getBooks from "../services/books/getBooks.js"; //! use the file extension
+// ! use the file extension in imports
+import authMiddleware from "../middleware/advancedAuth.js";
+import getBooks from "../services/books/getBooks.js";
 import getBookById from "../services/books/getBookById.js";
 import createBook from "../services/books/createBook.js";
 import updateBookById from "../services/books/updateBookById.js";
