@@ -2,9 +2,16 @@
 // records would work as well then we would reference it as records.records in our function below
 // recordData.records looks a bit better semantically
 import recordData from "../../data/records.json" assert { type: "json" };
+import NotFoundError from "../../errors/NotFoundError.js";
 
 const getRecordById = (id) => {
-  return recordData.records.find((record) => record.id === id);
+  const record = recordData.records.find((record) => record.id === id);
+
+  if (!record) {
+    throw new NotFoundError("record", id);
+  }
+
+  return record;
 };
 
 export default getRecordById;

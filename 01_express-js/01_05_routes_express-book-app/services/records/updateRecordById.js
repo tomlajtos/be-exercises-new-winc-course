@@ -1,10 +1,11 @@
 import recordData from "../../data/records.json" assert { type: "json" };
+import NotFoundError from "../../errors/NotFoundError.js";
 
 const updateRecordById = (id, title, artist, year, available, genre) => {
   const record = recordData.records.find((record) => record.id === id);
 
   if (!record) {
-    throw new Error(` with id ${id} was not found!`);
+    throw new NotFoundError("record", id);
   }
   // nullish coalescing makes sure we preserve the original [key:value]
   // if there is no new [key:value] in the request body
