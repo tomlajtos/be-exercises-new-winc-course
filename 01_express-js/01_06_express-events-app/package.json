@@ -1,0 +1,29 @@
+{
+  "name": "express-events",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "REST API for managing events",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "test-positive": "newman run \"../01_06_postman/collections/Events API.json\" -e \"../postman/environments/Local.postman_environment.json\"",
+    "test-negative": "newman run \"../01_06_postman/collections/Events API Negative.json\" -e \"../postman/environments/Local.postman_environment.json\"",
+    "test": "npm run test-positive && npm run test-negative",
+    "debug": "nodemon --inspect src/index.js"
+  },
+  "author": "tomlajtos",
+  "license": "ISC",
+  "dependencies": {
+    "@sentry/node": "^7.110.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "uuid": "^9.0.1",
+    "winston": "^3.13.0"
+  },
+  "devDependencies": {
+    "newman": "^6.1.2",
+    "nodemon": "^3.1.0",
+    "prisma": "^5.12.1"
+  }
+}
