@@ -3,6 +3,7 @@ import getBooks from "./services/books/getBooks.js";
 import getBookById from "./services/books/getBookById.js";
 import createBook from "./services/books/createBook.js";
 import updateBookById from "./services/books/updateBookById.js";
+import deleteBook from "./services/books/deleteBook.js";
 
 const app = express();
 app.use(express.json());
@@ -72,6 +73,24 @@ app.put("/books/:id", (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).send(`Something went wrong while updating book by id!`);
+  }
+});
+
+app.delete("/books/:id", (req, res) => {
+  try {
+    const { id } = req.params;
+    const deletedBookId = deleteBook(id);
+
+    if (!deletedBookId) {
+      res.status(404).send(`The book with id ${id} was not found!`);
+    } else {
+      res.status(200).json({
+        message: `Book with id ${deletedBookId} was succesfully deleted!`,
+      });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).send(`Something went wrong while deleting the book by id!`);
   }
 });
 
