@@ -1,8 +1,10 @@
 import express from "express";
 import getBooks from "./services/books/getBooks.js";
 import getBookById from "./services/books/getBookById.js";
+import createBook from "./services/books/createBook.js";
 
 const app = express();
+app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send("Hello again, World");
@@ -37,6 +39,17 @@ app.get("/books/:id", (req, res) => {
       .send(
         "Something went wrong while getting the book with the specified id!",
       );
+  }
+});
+
+app.post("/books", (req, res) => {
+  try {
+    const { title, author, isbn, pages, available, genre } = req.body;
+    const newBook = createBook(title, author, isbn, pages, available, genre);
+    res.status(201).json(newBook);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Somethiing went wrong while creating the new book!");
   }
 });
 
